@@ -34,6 +34,7 @@ class GridContainerView: UIView {
         let size = dataSource.sizeOfContainer(self)
         let itemSize = s/CGFloat(max(size.width, size.height))
         
+        itemViews.forEach { $0.value.removeFromSuperview() }
         itemViews.removeAll()
        
         for x in 0..<size.width {
