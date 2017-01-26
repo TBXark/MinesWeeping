@@ -130,7 +130,7 @@ class GridItem {
 
 
 struct GridItemBuilder {
-    let items: [[GridItem]]
+    let items: [[GridItem]] // 0: y 1: x
     
     init?(size: Size, numOfBomb: Int) {
         guard size.width > 0, size.height > 0, numOfBomb > 0, numOfBomb < size.width * size.height else { return nil }
@@ -141,14 +141,14 @@ struct GridItemBuilder {
             _ = bombSet.insert(Point.radomd(size: size))
         }
         
-        for x in 0..<size.width {
-            for y in 0..<size.height {
+        for y in 0..<size.height {
+            for x in 0..<size.width {
                 let p = Point(x: x, y: y)
                 if bombSet.contains(p) {
-                    total[x][y] = GridType.bomb
+                    total[y][x] = GridType.bomb
                     for r in p.arround {
                         if r.isEnable(size: size) {
-                            total[r.x][r.y] = total[r.x][r.y].increase()
+                            total[r.y][r.x] = total[r.y][r.x].increase()
                         }
                     }
                 }
