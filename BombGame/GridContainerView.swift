@@ -38,11 +38,11 @@ class GridContainerView: UIView {
        
         for x in 0..<size.width {
             for y in 0..<size.height {
-                let p = Point.init(x: x, y: y)
+                let p = Point(x: x, y: y)
                 let rect = CGRect(x: offsetX + CGFloat(x) * itemSize, y: offSetY + CGFloat(y) * itemSize, width: itemSize, height: itemSize)
                 let item = dataSource.itemForContainer(self, point: p)
-                let itemView = GridItemView.init(item: item, frame: rect)
-                let tap = UITapGestureRecognizer.init(target: self, action: #selector(GridContainerView.didClickItem(_:)))
+                let itemView = GridItemView(item: item, frame: rect)
+                let tap = UITapGestureRecognizer(target: self, action: #selector(GridContainerView.didClickItem(_:)))
                 itemView.addGestureRecognizer(tap)
                 addSubview(itemView)
                 itemViews[p] = itemView

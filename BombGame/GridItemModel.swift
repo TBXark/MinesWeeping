@@ -65,28 +65,28 @@ struct Point: Hashable {
     
     
     var topLeft: Point {
-        return Point.init(x: x - 1, y: y - 1)
+        return Point(x: x - 1, y: y - 1)
     }
     var topRight: Point {
-        return Point.init(x: x + 1, y: y - 1)
+        return Point(x: x + 1, y: y - 1)
     }
     var bottomLeft: Point {
-        return Point.init(x: x - 1, y: y + 1)
+        return Point(x: x - 1, y: y + 1)
     }
     var bottomRight: Point {
-        return Point.init(x: x + 1, y: y + 1)
+        return Point(x: x + 1, y: y + 1)
     }
     var top: Point {
-        return Point.init(x: x, y: y - 1)
+        return Point(x: x, y: y - 1)
     }
     var bottom: Point {
-        return Point.init(x: x, y: y + 1)
+        return Point(x: x, y: y + 1)
     }
     var left: Point {
-        return Point.init(x: x - 1, y: y)
+        return Point(x: x - 1, y: y)
     }
     var right: Point {
-        return Point.init(x: x + 1, y: y)
+        return Point(x: x + 1, y: y)
     }
     
     var arround: [Point] {
@@ -95,9 +95,9 @@ struct Point: Hashable {
     
     
     static func radomd(size: Size) -> Point {
-        let x = Int(arc4random()) % ( size.width + 1 )
-        let y = Int(arc4random()) % ( size.height + 1 )
-        return Point.init(x: x, y: y)
+        let x = Int(arc4random()) % size.width
+        let y = Int(arc4random()) % size.height
+        return Point(x: x, y: y)
     }
     
     var hashValue: Int {
@@ -140,7 +140,7 @@ struct GridItemBuilder {
     
     init?(size: Size, numOfBomb: Int) {
         guard size.width > 0, size.height > 0, numOfBomb > 0, numOfBomb < size.width * size.height else { return nil }
-        var total = [[GridType]].init(repeating: [GridType].init(repeating: GridType.number(value: 0), count: size.width), count: size.height)
+        var total = [[GridType]](repeating: [GridType](repeating: GridType.number(value: 0), count: size.width), count: size.height)
         
         var bombSet = Set<Point>()
         while bombSet.count < numOfBomb {
@@ -162,7 +162,7 @@ struct GridItemBuilder {
         }
         items = total.enumerated().map({ (y: Int, element: [GridType]) -> [GridItem] in
             return element.enumerated().map({  (x: Int, type: GridType) -> GridItem in
-                return GridItem.init(type: type, point: Point.init(x: x, y: y))
+                return GridItem(type: type, point: Point(x: x, y: y))
             })
         })
     }
