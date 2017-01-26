@@ -9,9 +9,6 @@
 import UIKit
 
 
-private let kContainerInset: CGFloat = 20
-private let kContainerSize = UIScreen.main.bounds.height - kContainerInset * 2
-
 class ViewController: UIViewController {
     
     fileprivate var size = Size.init(width: 10, height: 10)
@@ -19,21 +16,24 @@ class ViewController: UIViewController {
     fileprivate lazy var items: [[GridItem]] = {
         return GridItemBuilder.init(size: self.size, numOfBomb: self.numOfBomb)?.items ?? [[GridItem]]()
     }()
-    fileprivate let container = GridContainerView(frame: CGRect(x: kContainerInset, y: kContainerInset, width: kContainerSize, height: kContainerSize))
 
-    
+
+    @IBOutlet weak var container: GridContainerView!
     @IBOutlet weak var stateLabel: UILabel!
     @IBOutlet weak var widthField: UITextField!
     @IBOutlet weak var heightField: UITextField!
     @IBOutlet weak var bombField: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         container.dataSource = self
         container.delegate = self
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         container.reloadData()
-        view.addSubview(container)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,6 +49,11 @@ class ViewController: UIViewController {
         items = GridItemBuilder.init(size: size, numOfBomb: numOfBomb)?.items ?? [[GridItem]]()
         stateLabel.text = "The current size is \(w) * \(h), Number of bombs is \(b)"
         container.reloadData()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
 
 }
@@ -81,6 +86,20 @@ extension ViewController: GridContainerDelegate, GridContainerDataSource {
             }))
             container.isUserInteractionEnabled = false
             present(alert, animated: true, completion: nil)
+        } else {
+            let final = size.height * size.width - numOfBomb
+            let current = items.reduce(0, { (c: Int, n: [GridItem]) -> Int in
+                return c + n.numOfOpen
+            })
+            if current == final {
+                let alert = UIAlertController.init(title: "You are Win", message: "Do you want to try again", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction.init(title: "No", style: UIAlertActionStyle.cancel, handler: nil))
+                alert.addAction(UIAlertAction.init(title: "Again", style: UIAlertActionStyle.default, handler: { _ in
+                    container.reloadData()
+                }))
+                container.isUserInteractionEnabled = false
+                present(alert, animated: true, completion: nil)
+            }
         }
     }
     

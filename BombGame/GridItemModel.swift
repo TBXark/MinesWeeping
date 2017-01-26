@@ -128,6 +128,12 @@ class GridItem {
     }
 }
 
+extension Collection where Iterator.Element: GridItem {
+    var numOfOpen: Int {
+        return filter { $0.isOpen }.count
+    }
+}
+
 
 struct GridItemBuilder {
     let items: [[GridItem]] // 0: y 1: x

@@ -23,17 +23,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0yf-cR-iCa">
-                                <rect key="frame" x="497" y="20" width="150" height="355"/>
+                                <rect key="frame" x="497" y="0.0" width="150" height="375"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mines Weeping" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I44-h0-rkw">
-                                        <rect key="frame" x="16" y="16" width="118" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="8Jg-en-bAF"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tlk-1O-Zz3">
                                         <rect key="frame" x="0.0" y="81" width="150" height="100"/>
                                         <subviews>
@@ -98,7 +89,7 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.92273995535714282" alpha="1" colorSpace="calibratedWhite"/>
                                         <accessibility key="accessibilityConfiguration" label="Size"/>
                                         <constraints>
                                             <constraint firstItem="cLK-Re-2hH" firstAttribute="top" secondItem="Tlk-1O-Zz3" secondAttribute="top" constant="17" id="1ea-f9-vlS"/>
@@ -117,8 +108,8 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kS-gF-Gry">
-                                        <rect key="frame" x="25" y="300" width="100" height="30"/>
-                                        <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <rect key="frame" x="25" y="320" width="100" height="30"/>
+                                        <color key="backgroundColor" red="0.98948138952255249" green="0.48568063974380493" blue="0.25788608193397522" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="QzT-Pz-Ktc"/>
                                         </constraints>
@@ -130,17 +121,26 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="current size is 10*10, 10 bombs" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ee-9M-F40">
-                                        <rect key="frame" x="17" y="181" width="117" height="111"/>
+                                        <rect key="frame" x="17" y="181" width="117" height="131"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mines Weeping" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I44-h0-rkw">
+                                        <rect key="frame" x="16" y="30" width="118" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="8Jg-en-bAF"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                                <color key="backgroundColor" white="0.96817336309523794" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.97101934523809508" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="6ee-9M-F40" firstAttribute="leading" secondItem="0yf-cR-iCa" secondAttribute="leading" constant="17" id="0T8-i0-Lii"/>
                                     <constraint firstItem="9kS-gF-Gry" firstAttribute="top" secondItem="6ee-9M-F40" secondAttribute="bottom" constant="8" id="0de-ti-hfJ"/>
-                                    <constraint firstItem="Tlk-1O-Zz3" firstAttribute="top" secondItem="I44-h0-rkw" secondAttribute="bottom" constant="44" id="5NF-fB-EAY"/>
+                                    <constraint firstItem="Tlk-1O-Zz3" firstAttribute="top" secondItem="I44-h0-rkw" secondAttribute="bottom" constant="30" id="5NF-fB-EAY"/>
                                     <constraint firstItem="6ee-9M-F40" firstAttribute="top" secondItem="Tlk-1O-Zz3" secondAttribute="bottom" id="Eba-sE-2RY"/>
                                     <constraint firstAttribute="trailing" secondItem="Tlk-1O-Zz3" secondAttribute="trailing" id="MY0-Ic-6uK"/>
                                     <constraint firstAttribute="trailing" secondItem="I44-h0-rkw" secondAttribute="trailing" constant="16" id="Ywg-jm-djS"/>
@@ -150,20 +150,30 @@
                                     <constraint firstItem="I44-h0-rkw" firstAttribute="leading" secondItem="0yf-cR-iCa" secondAttribute="leading" constant="16" id="de0-cY-sBq"/>
                                     <constraint firstAttribute="trailing" secondItem="9kS-gF-Gry" secondAttribute="trailing" constant="25" id="f3M-v6-jeJ"/>
                                     <constraint firstItem="Tlk-1O-Zz3" firstAttribute="leading" secondItem="0yf-cR-iCa" secondAttribute="leading" id="mz6-d2-m9Y"/>
-                                    <constraint firstItem="I44-h0-rkw" firstAttribute="top" secondItem="0yf-cR-iCa" secondAttribute="top" constant="16" id="vBW-Ya-omW"/>
+                                    <constraint firstItem="I44-h0-rkw" firstAttribute="top" secondItem="0yf-cR-iCa" secondAttribute="top" constant="30" id="vBW-Ya-omW"/>
                                     <constraint firstAttribute="bottom" secondItem="9kS-gF-Gry" secondAttribute="bottom" constant="25" id="y0e-3d-v7o"/>
                                 </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oIW-Pk-gC2" customClass="GridContainerView" customModule="BombGame" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="477" height="355"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="0yf-cR-iCa" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="0Im-qy-zgy"/>
+                            <constraint firstItem="0yf-cR-iCa" firstAttribute="leading" secondItem="oIW-Pk-gC2" secondAttribute="trailing" constant="10" id="3Un-Ti-ZWg"/>
                             <constraint firstItem="0yf-cR-iCa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="IWi-aY-Atn"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0yf-cR-iCa" secondAttribute="bottom" id="QGg-BI-1Bp"/>
+                            <constraint firstItem="oIW-Pk-gC2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="Z6h-hu-Y8W"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oIW-Pk-gC2" secondAttribute="bottom" constant="10" id="a17-rw-V48"/>
+                            <constraint firstItem="oIW-Pk-gC2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="qMA-Ff-cog"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="bombField" destination="S61-yl-dQj" id="bzp-Ax-W6d"/>
+                        <outlet property="container" destination="oIW-Pk-gC2" id="OUV-tZ-SYz"/>
                         <outlet property="heightField" destination="QH1-Lq-aar" id="Svh-iC-SGm"/>
                         <outlet property="stateLabel" destination="6ee-9M-F40" id="ati-mq-Yca"/>
                         <outlet property="widthField" destination="ldw-vI-kBu" id="CWd-8j-9Yy"/>
