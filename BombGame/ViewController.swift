@@ -66,6 +66,7 @@ extension ViewController {
 
 extension ViewController: GridContainerDelegate, GridContainerDataSource {
     func didClickItem(_ container: GridContainerView, item: GridItemView) {
+        guard !item.item.isOpen else { return }
         item.changeState(open: true)
         if item.item.type.isEmpty {
             for p in item.item.point.arround {
@@ -107,9 +108,6 @@ extension ViewController: GridContainerDelegate, GridContainerDataSource {
         let h = items.count
         let w = items.first?.count ?? 0
         return Size.init(width: w, height: h)
-    }
-    func didOpenItemForContainer(_ container: GridContainerView, point: Point) -> Bool {
-        return items[point.y][point.x].isOpen
     }
     
     func itemForContainer(_ container: GridContainerView, point: Point) -> GridItem {

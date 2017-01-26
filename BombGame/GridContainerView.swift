@@ -14,7 +14,6 @@ protocol GridContainerDelegate: class {
 
 protocol GridContainerDataSource: class {
     func sizeOfContainer(_ container: GridContainerView) -> Size
-    func didOpenItemForContainer(_ container: GridContainerView, point: Point) -> Bool
     func itemForContainer(_ container: GridContainerView, point: Point) -> GridItem
 }
 
