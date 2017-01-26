@@ -21,6 +21,8 @@ class ViewController: UIViewController {
     }()
     fileprivate let container = GridContainerView(frame: CGRect(x: kContainerInset, y: kContainerInset, width: kContainerSize, height: kContainerSize))
 
+    
+    @IBOutlet weak var stateLabel: UILabel!
     @IBOutlet weak var widthField: UITextField!
     @IBOutlet weak var heightField: UITextField!
     @IBOutlet weak var bombField: UITextField!
@@ -45,6 +47,7 @@ class ViewController: UIViewController {
         size = Size.init(width: w, height: h)
         numOfBomb = b
         items = GridItemBuilder.init(size: size, numOfBomb: numOfBomb)?.items ?? [[GridItem]]()
+        stateLabel.text = "The current size is \(w) * \(h), Number of bombs is \(b)"
         container.reloadData()
     }
 

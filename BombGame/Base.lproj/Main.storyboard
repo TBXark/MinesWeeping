@@ -165,6 +165,7 @@
                     <connections>
                         <outlet property="bombField" destination="S61-yl-dQj" id="bzp-Ax-W6d"/>
                         <outlet property="heightField" destination="QH1-Lq-aar" id="Svh-iC-SGm"/>
+                        <outlet property="stateLabel" destination="6ee-9M-F40" id="ati-mq-Yca"/>
                         <outlet property="widthField" destination="ldw-vI-kBu" id="CWd-8j-9Yy"/>
                     </connections>
                 </viewController>
